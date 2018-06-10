@@ -27,6 +27,7 @@ module.exports = {
     devtool : 'chep-module-eval-source-map',
     devServer : {
         contentBase : path.join(__dirname,'public'),
+        historyApiFallback : true,
         host : '0.0.0.0',
         port : 8080
 
