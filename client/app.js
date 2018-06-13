@@ -4,12 +4,13 @@ import ReactDOM from 'react-dom';
 //Importing components
 import AppRouter from './routers/AppRouter'
 //import styling
-import 'normalize.css/normalize.css'
-import './styles/styles.scss'
+import 'bootstrap/dist/css/bootstrap.css';
+//import 'normalize.css/normalize.css'
+//import './styles/styles.scss'
 
 const jsx = (
     <div>
-    <AppRouter/>
+        <AppRouter/>
     </div>
 )
 

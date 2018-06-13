@@ -1,8 +1,8 @@
 import React from 'react';
 
-const WelcomePage = ()=>(
+const WelcomePage = () =>(
     <div>
-        This is Welcome Page 
+        <center>This is Welcome Page </center>
     </div>
 )
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const HelpPage = ()=>(
     <div>
-        This is HelpPage
+        <center>This is HelpPage</center>
     </div>
 )
 

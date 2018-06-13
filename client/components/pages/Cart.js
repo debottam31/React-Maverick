@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cart = ()=>(
     <div>
-        This is Cart Component
+        <center>This is Cart Component</center>
     </div>
 )
 
