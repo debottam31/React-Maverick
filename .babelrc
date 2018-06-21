@@ -4,6 +4,8 @@
         "react"
     ],
     "plugins": [
-        "transform-class-properties"
+        "transform-class-properties",
+        "react-html-attrs",
+        "transform-object-rest-spread"
     ]
 }

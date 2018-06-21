@@ -2,17 +2,16 @@ import React from 'react';
 import {BrowserRouter,Route, Switch} from 'react-router-dom';
 
 import Header from '../components/Header/Header';
-import WelcomePage from '../components/WelcomePage/WelcomePage';
-import Restaurants from '../components/Restaurants/Restaurants';
-import Cart from '../components/Cart/Cart';
-import HelpPage from '../components/HelpPage/HelpPage';
-import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
+import WelcomePage from '../components/Pages/Welcome/WelcomePage';
+import Restaurants from '../components/Pages/Restaurants';
+import Cart from '../components/Pages/Cart';
+import HelpPage from '../components/Pages/HelpPage';
+import NotFoundPage from '../components/Pages/NotFoundPage';
 
 
 const AppRouter  = ()=>(
     <BrowserRouter>
         <div>
-            <Header/>
             <Switch>
             <Route path='/' component= {WelcomePage} exact />
             <Route path='/restaurants' component= {Restaurants} exact/>

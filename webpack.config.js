@@ -22,7 +22,10 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
             ]
-        }]
+        },{ test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/,
+             loader: 'url-loader?limit=100000'
+        }
+    ]
     },
     devtool : 'chep-module-eval-source-map',
     devServer : {
