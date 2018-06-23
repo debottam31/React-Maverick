@@ -15,30 +15,21 @@ const Parners = ()=>{
 
     return(
         <section class="partners">
-                <div class="cont-parnters">
+            <div class="cont-parnters">
                 <h3 class="subheading ourpartners">Our Partners</h3>
-                    <div class="partnercontainer">
-                        {/* <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                {restaurants.map((name)=>{
-                                    return(
-                                        <Restaurant key={name} name ={name}/>
-                                    )
-                                })}
-                            </div>
-                        </div> */}
-                        <Swiper {...params}>
+                <div class="partnercontainer">
+                    <Swiper {...params}>
                         {restaurants.map((restaurant,index)=>{
-                                    return(
-                                    <div key={index}>
+                            return(
+                                <div key={index}>
                                     <Restaurant name ={restaurant.name} cssclass={restaurant.cssclass}/>
-                                    </div>
-                                    )
-                                })}
-                        </Swiper>
-                    </div>
+                                </div>
+                            )
+                        })}
+                    </Swiper>
                 </div>
-            </section>
+            </div>
+        </section>
     )
 }
 
@@ -58,10 +49,12 @@ const Restaurant = (props)=>(
 
 const params = {
     slidesPerView: 5,
-    mousewheelControl: true,
+    mousewheel: true,
     spaceBetween: 30,
-    autoplay: 2500,
-    autoplaydisableOnInteraction: false,
+    autoplay  : {
+        delay : 2500,
+        disableOnInteraction: false
+    },
     loop: true,
     breakpoints: {
       // when window width is <= 320px
