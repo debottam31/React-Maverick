@@ -4,7 +4,7 @@ const path = require('path');
 console.log(__dirname);
 
 module.exports = {
-    entry : './src/app.js',
+    entry : './app.js',
     mode : 'development',
     output : {
         path : path.join(__dirname,'public'),
@@ -14,7 +14,11 @@ module.exports = {
         rules : [{
             loader : 'babel-loader',
             test : /\.js$/,
-            exclude : /node_modules/
+            exclude : /node_modules/,
+            query: {
+                presets: ['react', 'es2015'],
+                plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
+            }
         },{
             test : /\.s?css$/,
             use : [
@@ -22,14 +26,21 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
             ]
+        },{
+            test: /\.jsx?$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: {
+              presets: ['react', 'es2015'],
+              plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
+            }
         }]
     },
     devtool : 'chep-module-eval-source-map',
     devServer : {
         contentBase : path.join(__dirname,'public'),
         historyApiFallback : true,
-        host : '0.0.0.0',
-        port : 8080
-
+        host : 'localhost',
+        port : 8081
     } 
 };
