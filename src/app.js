@@ -12,7 +12,9 @@ import '../public/styles/styles.css'
 const jsx = (
     <div>
     <AppRouter/>
+    
     </div>
 )
+
 
 ReactDOM.render(jsx,document.getElementById('app'));

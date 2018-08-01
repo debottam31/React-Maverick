@@ -1,14 +1,68 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
-const Header = ()=>(
-    <div>
-        <h1>Tell Me</h1>
-        <NavLink to='/' activeClassName='is-active' exact>Home</NavLink>
-        <NavLink to='/restaurants' activeClassName='is-active'>Order Now</NavLink>
-        <NavLink to='/viewCart' activeClassName='is-active'>View Cart</NavLink>
-        <NavLink to='/help' activeClassName='is-active'>Help</NavLink>
-    </div>
-);
+
+class Header extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            headerClass : 'glass'
+        }
+    }
+
+    componentDidMount(){
+        window.addEventListener('scroll',this.scrollHandler);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.scrollHandler);
+    }
+
+    scrollHandler = (e)=>{
+        //console.log(e);
+        let yaxis = e.pageY;
+        if(yaxis > 0){
+            this.setState(()=>({headerClass : 'glass opaq'}))
+        }else{
+            this.setState(()=>({headerClass : 'glass'}))
+        }
+    }
+
+    render () {
+        return (
+            <div>
+            <nav class ={this.state.headerClass}>
+                <div class="logo">
+                <Link to='/' class = 'brand'>tell me</Link>
+                </div>
+                <div class ='menu'>
+                    <ul>
+                        <li><NavLink to='/' activeClassName='is-active' exact>Home</NavLink></li>
+                        <li><NavLink to='/restaurants' activeClassName='is-active'>Restaurants</NavLink></li>
+                        <li><NavLink to='/viewCart' activeClassName='is-active'>View Cart</NavLink></li>
+                        <li><NavLink to='/help' activeClassName='is-active'>Help</NavLink></li>
+                    </ul>
+                </div>    
+            </nav>
+        </div>
+        )}
+}
+// const Header = ()=>(
+//     <div>
+//         <nav class ='glass'>
+//             <div class="logo">
+//             <Link to='/' class = 'brand'>tell me</Link>
+//             </div>
+//             <div class ='menu'>
+//                 <ul>
+//                     <li><NavLink to='/' activeClassName='is-active' exact>Home</NavLink></li>
+//                     <li><NavLink to='/restaurants' activeClassName='is-active'>Restaurants</NavLink></li>
+//                     <li><NavLink to='/viewCart' activeClassName='is-active'>View Cart</NavLink></li>
+//                     <li><NavLink to='/help' activeClassName='is-active'>Help</NavLink></li>
+//                 </ul>
+//             </div>    
+//         </nav>
+//     </div>
+// );
 
 export default Header;
