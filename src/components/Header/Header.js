@@ -19,8 +19,15 @@ class Header extends React.Component {
     }
 
     scrollHandler = (e)=>{
-        //console.log(e);
-        let yaxis = e.pageY;
+        // console.log(e);
+        let yaxis ;
+        if(e.pageY){
+            yaxis = e.pageY;
+        }
+        if(e.srcElement){
+            yaxis = e.srcElement.body.scrollTop;
+        }
+        //console.log(e.srcElement.body.scrollTop);
         if(yaxis > 0){
             this.setState(()=>({headerClass : 'glass opaq'}))
         }else{
@@ -45,24 +52,7 @@ class Header extends React.Component {
                 </div>    
             </nav>
         </div>
-        )}
+        )
+    }
 }
-// const Header = ()=>(
-//     <div>
-//         <nav class ='glass'>
-//             <div class="logo">
-//             <Link to='/' class = 'brand'>tell me</Link>
-//             </div>
-//             <div class ='menu'>
-//                 <ul>
-//                     <li><NavLink to='/' activeClassName='is-active' exact>Home</NavLink></li>
-//                     <li><NavLink to='/restaurants' activeClassName='is-active'>Restaurants</NavLink></li>
-//                     <li><NavLink to='/viewCart' activeClassName='is-active'>View Cart</NavLink></li>
-//                     <li><NavLink to='/help' activeClassName='is-active'>Help</NavLink></li>
-//                 </ul>
-//             </div>    
-//         </nav>
-//     </div>
-// );
-
 export default Header;
