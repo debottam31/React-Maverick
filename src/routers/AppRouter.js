@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter,Route, Switch} from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
     
-import Header from '../components/Header/Header';
+//import Header from '../components/Header/Header';
 import WelcomePage from '../components/Pages/Welcome/WelcomePage';
 import Restaurants from '../components/Pages/Restaurants/index';
 import Restaurant from '../components/Pages/Restaurant/index';

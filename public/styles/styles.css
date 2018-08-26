@@ -906,7 +906,7 @@ p.rest-name-time{
 }
 section.menu-placeholder {
     width: 100%;
-    height: 100vh;
+    height: auto;
     font-family: "Barlow Light", sans-serif;
 }
 
