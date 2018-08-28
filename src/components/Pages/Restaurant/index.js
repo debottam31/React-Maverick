@@ -42,7 +42,11 @@ class Restaurant extends React.Component {
                     closesAt = {this.state.restaurantDetail.closesAt}
                     foodGenre = {this.state.restaurantDetail.foodGenre}
                     />
-                <RestMenu  dishItems = {this.state.restaurantDetail.dishItems}/>
+                <RestMenu  
+                    dishItems = {this.state.restaurantDetail.dishItems}
+                    restId ={this.state.restaurantDetail._id}
+                    name = {this.state.restaurantDetail.name}
+                />
                 <Footer />
                 </div>}
             </div>

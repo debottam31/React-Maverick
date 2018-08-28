@@ -8,7 +8,13 @@ const RestMenu = (props)=>(
         {
             props.dishItems.map((item)=>{
                 return(  
-                    <MenuItem key = {item._id} {...item}/>
+                    <MenuItem 
+                    key = {item._id} 
+                    details = {{
+                        restId : props.restId,
+                        name : props.name,
+                        ...item,
+                        }}/>
                 )
             })
         }
@@ -16,16 +22,5 @@ const RestMenu = (props)=>(
     </section>
 )
 
-const Quantity = ()=>(
-    <div className= 'item-qtycontainer' style={{margin:'0'}}>
-        <button className= 'buttonminus'>
-            <i class="fa fa-minus" aria-hidden="true"></i>
-        </button>
-        <p className='item-qty'>1</p>
-        <button className='buttonplus'>
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-    </div>
-)
 
 export default RestMenu ;

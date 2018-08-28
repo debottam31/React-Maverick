@@ -33,6 +33,9 @@ app.get('/api/restaurants', (req, res)=>{
 })
 //Get call for getting restaurant by ID
 app.get('/api/restaurant/:id', (req,res)=>{
+    if(!mongoose.Types.ObjectId.isValid(req.params.id)){
+         return res.status(400).json({ msg : 'Object ID is not valid '})  
+    }
     const objId = mongoose.Types.ObjectId(req.params.id);
     //const restaureantId =req.params.id;
     Restaurant.findById(objId)

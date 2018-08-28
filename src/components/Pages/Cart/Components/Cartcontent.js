@@ -1,5 +1,7 @@
 import React from 'react';
 
+import QuantityBtn from '../../../Layout/Quantitybtn';
+
 const CartContent = ()=>(
     <section className='cartcontent'>
         <h3 className='cart-subheading'>Your Orders</h3>
@@ -8,28 +10,12 @@ const CartContent = ()=>(
                 <p className='cart-rest-name'>From Annapurna</p>
                 <div className= 'cart-item'>
                     <p className='cart-item-name'>Egg roll</p>
-                    <div className= 'item-qtycontainer'>
-                        <button className= 'buttonminus'>
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
-                        <p className='item-qty'>2</p>
-                        <button className='buttonplus'>
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                    </div>
+                    <QuantityBtn />
                     <p className='cart-item-amount'>₹ 50.00</p>
                 </div>
                 <div className= 'cart-item'>
                     <p className='cart-item-name'>Moghlai Paratha</p>
-                    <div className= 'item-qtycontainer'>
-                        <button className= 'buttonminus'>
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
-                        <p className='item-qty'>1</p>
-                        <button className='buttonplus'>
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                    </div>
+                    <QuantityBtn />
                     <p className='cart-item-amount'>₹ 45.00</p>
                 </div>
             </div>
@@ -37,15 +23,7 @@ const CartContent = ()=>(
                 <p className='cart-rest-name'>From Rosui</p>
                 <div className= 'cart-item'>
                     <p className='cart-item-name'>Chicken Chowmin</p>
-                    <div className= 'item-qtycontainer'>
-                        <button className= 'buttonminus'>
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
-                        <p className='item-qty'>1</p>
-                        <button className='buttonplus'>
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                    </div>
+                    <QuantityBtn />
                     <p className='cart-item-amount'>₹ 90.00</p>
                 </div>
             </div>
