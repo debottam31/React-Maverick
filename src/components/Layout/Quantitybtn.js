@@ -1,10 +1,10 @@
 import React from  'react'
 import {connect} from 'react-redux';
-import {incrementItem,removeItem} from '../../actions/cartitems';
+import {incrementItem,decrementItem, removeItem} from '../../actions/cartitems';
 
 const QuantityBtn = (props)=>(
     <div className= 'item-qtycontainer' style={props.style}>
-        <button className= 'buttonminus' onClick={props.onDecrementCounter}>
+        <button className= 'buttonminus' onClick={()=> props.onDecrementCounter(props.itemId, props.quantity)}>
             <i class="fa fa-minus" aria-hidden="true"></i>
         </button>
         <p className='item-qty'>{props.quantity}</p>
@@ -17,7 +17,12 @@ const QuantityBtn = (props)=>(
 const mapDispatchToProps =  (dispatch)=>{
     return {
         onIncrementCounter : (itemid)=> dispatch(incrementItem({itemId :itemid})),
-        onDecrementCounter : ()=> dispatch(removeItem())
+        onDecrementCounter : (itemid, qty)=> {
+            if(qty<=1){
+                return dispatch(removeItem({itemId :itemid}))
+            }
+             return dispatch(decrementItem({itemId :itemid}))
+        }
     }
 }
 

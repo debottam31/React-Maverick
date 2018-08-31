@@ -28,8 +28,17 @@ export const incrementItem =({itemId=''}={})=>({
     type: 'INCREMENT_ITEM',
     itemId : itemId
 }) 
-//REMOVE ITEMS
-export const removeItem = ({itemId =''}={})=>({
+//DECREMENT ITEMS
+export const decrementItem = ({itemId =''}={})=>({
+    type : 'DECREMENT_ITEM',
+    itemId : itemId
+})
+// REMOVE ITEM
+export const removeItem = ({itemId = ''}={})=>({
     type : 'REMOVE_ITEM',
     itemId : itemId
+})
+
+export const calculateTotal = ()=>({
+    type : 'CALCULATE_TOTAL'
 })
