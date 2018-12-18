@@ -10,6 +10,7 @@ module.exports = (env)=>{
             path : path.join(__dirname,'public'),
             filename : 'bundle.js'
         },
+        //modules
         module : {
             rules : [{
                 loader : 'babel-loader',

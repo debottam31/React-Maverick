@@ -13,7 +13,7 @@ class ReactaurantsContainer extends React.Component {
         }
     }
     componentDidMount(){
-        axios.get('http://localhost:3000/api/restaurants', {headers: {"Access-Control-Allow-Origin": "*"}})
+        axios.get('https://us-east1-react-maverick.cloudfunctions.net/function-1/restaurants', {headers: {"Access-Control-Allow-Origin": "*"}})
             .then((res)=>{
                 this.setState(()=>({
                     restaurants: res.data,
@@ -34,7 +34,7 @@ class ReactaurantsContainer extends React.Component {
                     ))}
 
                     {this.state.ready && this.state.restaurants.map((restaurant)=> (
-                        <RestaurantItem key = {restaurant._id} {...restaurant}/>
+                        <RestaurantItem key = {restaurant.id} {...restaurant}/>
                     ))}
 
                     <div class='filling-empty-space'></div>

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {addItem} from '../../../../actions/cartitems'
 
 const MenuItem = (props)=>{
-//    console.log(props.details._id);
+    //console.log(props.details);
     return (
     <div className='menu-item'>
         <div className='menu-item-details'>
@@ -19,7 +19,7 @@ const MenuItem = (props)=>{
             <p className='menu-price'>₹ {props.details.price}.00</p>
             { props.itemexist ? 
                 <QuantityBtn style = {{margin:'0'}}
-                    itemId = {props.details._id}
+                    itemId = {props.details.itemId}
                     quantity = {props.quantity}
                  /> 
                 : <button className='btn-addto-cart'
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch)=>{
             restaurantName : item.name,
             restId : item.restId,
             itemName : item.itemName,
-            itemId : item._id,
+            itemId : item.itemId,
             itemType : item.itemType,
             price : item.price
         }))
@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch)=>{
 
 const mapStateToProps = (state, props)=>{
      const itemdetail = state.cartItems.find((item)=>{
-        return item.itemId === props.details._id
+        return item.itemId === props.details.itemId
     })
     if (itemdetail){
         return {

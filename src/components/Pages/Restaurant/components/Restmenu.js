@@ -6,10 +6,10 @@ const RestMenu = (props)=>(
         <h3 className='rest-meu-subheading'>Menu</h3>
         <div className='rest-menu-placeholder'>
         {
-            props.dishItems.map((item)=>{
+            props.dishItems.map((item, index)=>{
                 return(  
                     <MenuItem 
-                    key = {item._id} 
+                    key = {index} 
                     details = {{
                         restId : props.restId,
                         name : props.name,

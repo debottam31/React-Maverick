@@ -16,7 +16,7 @@ const cartItemsReducer = (state =cartItemDefaultState , action )=>{
                 totalAmount : state.totalAmount<=0 ? (state.deliveryCharge+ action.cartItem.price) : (state.totalAmount + action.cartItem.price)
             }
         case 'INCREMENT_ITEM' : 
-            console.log(state.deliveryCharge);
+            //console.log(state.deliveryCharge);
             const incrementCartItems = state.cartItems.map((item)=>{
                 if(item.itemId === action.itemId){
                     return {
@@ -31,7 +31,7 @@ const cartItemsReducer = (state =cartItemDefaultState , action )=>{
                 ...state,
                 cartItems : incrementCartItems,
                 totalAmount : incrementCartItems.reduce((sum, value)=>{
-                    console.log(sum);
+                    //console.log(sum);
                     return sum += (value.price * value.quantity)
                 }, state.deliveryCharge)
             }

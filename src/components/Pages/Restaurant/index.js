@@ -17,13 +17,16 @@ class Restaurant extends React.Component {
 
     componentDidMount(){
         const restId = this.props.match.params.id
-        axios.get(`http://localhost:3000/api/restaurant/${restId}`, {headers: {"Access-Control-Allow-Origin": "*"}})
+        //console.log(this.props);
+        axios.get(`https://us-east1-react-maverick.cloudfunctions.net/function-1/restaurant/${restId}`, {headers: {"Access-Control-Allow-Origin": "*"}})
             .then((res)=>{
                 this.setState(()=>({
                     restaurantDetail: res.data,
                     ready : true
                 }))
-                //console.log(this.state.restaurantDetail)
+                //console.log(this.state.restaurantDetail.id)
+            }).catch((e)=>{
+                console.log(e);
             })
     
     }
@@ -31,10 +34,10 @@ class Restaurant extends React.Component {
         //console.log(this.state.restaurantDetail);
         return (
             <div>
-                {this.state.restaurantDetail.dishItems && <div>
+                {this.state.restaurantDetail.dishitems && <div>
                 <Header />
                 <MenuBanner
-                    id = {this.state.restaurantDetail._id}
+                    id = {this.state.restaurantDetail.id}
                     name = {this.state.restaurantDetail.name}
                     // address = {this.restaurantDetail.}
                     rating = {this.state.restaurantDetail.rating}
@@ -43,8 +46,8 @@ class Restaurant extends React.Component {
                     foodGenre = {this.state.restaurantDetail.foodGenre}
                     />
                 <RestMenu  
-                    dishItems = {this.state.restaurantDetail.dishItems}
-                    restId ={this.state.restaurantDetail._id}
+                    dishItems = {this.state.restaurantDetail.dishitems}
+                    restId ={this.state.restaurantDetail.id}
                     name = {this.state.restaurantDetail.name}
                 />
                 <Footer />

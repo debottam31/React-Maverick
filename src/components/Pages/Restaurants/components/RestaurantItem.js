@@ -12,7 +12,7 @@ const RestaurantItem = (props)=>{
                     <div class='restaurantname'>
                         {props.name}
                     </div>
-                    <Link to={`/restaurants/${props._id}`} class ="btn-view-menu"><i class="fa fa-cutlery"></i> 
+                    <Link to={`/restaurants/${props.id}`} class ="btn-view-menu"><i class="fa fa-cutlery"></i> 
                         &nbsp;View Menu</Link>
                 </div>
             </div>
