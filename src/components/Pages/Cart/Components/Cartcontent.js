@@ -6,7 +6,7 @@ import {calculateTotal} from '../../../../actions/cartitems'
 const CartContent = (props)=>{
    // console.log(props.cartItems);
    if(props.itemCount > 0){
-    return (    
+    return (     
         <section className='cartcontent'>
            <h3 className='cart-subheading'>Your Orders</h3>
            <div className='cart-item-placeholder'>

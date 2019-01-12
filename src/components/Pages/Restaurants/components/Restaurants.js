@@ -34,7 +34,7 @@ class ReactaurantsContainer extends React.Component {
                     ))}
 
                     {this.state.ready && this.state.restaurants.map((restaurant)=> (
-                        <RestaurantItem key = {restaurant._id} {...restaurant}/>
+                        <RestaurantItem key = {restaurant._id} restaurantdetail = {{...restaurant}}/>
                     ))}
 
                     <div class='filling-empty-space'></div>
@@ -55,13 +55,14 @@ const RestLoader = props => (
 		    height={300}
 		    width={300}
 		    speed={2}
-		    primaryColor="#f3f3f3"
-		    secondaryColor="#ecebeb"
+		    primaryColor="#dbdbdb"
+            secondaryColor="#eae8e8"
+            style = {{width: '100%', height: '100%'}}
 		    {...props}
 	    >
-		    <rect x="19.5" y="20.27" rx="0" ry="0" width="268" height="184" /> 
-		    <rect x="20.46" y="220.72" rx="0" ry="0" width="189" height="21.09" /> 
-		    <rect x="18.5" y="253.27" rx="0" ry="0" width="257" height="20.02" />
+		    <rect x="20" y="20" rx="0" ry="0" width="260" height="180" /> 
+		    <rect x="20" y="210" rx="0" ry="0" width="200" height="15" /> 
+		    <rect x="20" y="235" rx="0" ry="0" width="260" height="15" />
 	    </ContentLoader>
     </div>
 )

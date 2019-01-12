@@ -6,13 +6,18 @@ const RestaurantItem = (props)=>{
         <div class= 'rest-list-col'>
             <div class = 'restdetailscontainer'>
                 <div class= 'restaurantbanner'>
-                    <h3>{props.name}</h3>
+                    <h3>{props.restaurantdetail.name}</h3>
                 </div>
                 <div class='rest-detail-col'>
                     <div class='restaurantname'>
-                        {props.name}
+                        {props.restaurantdetail.name}
                     </div>
-                    <Link to={`/restaurants/${props._id}`} class ="btn-view-menu"><i class="fa fa-cutlery"></i> 
+                    <Link to={{
+                        pathname : `/restaurants/${props.restaurantdetail._id}`,
+                        state : {...props.restaurantdetail}
+                    }}
+                        class ="btn-view-menu">
+                            <i class="fa fa-cutlery"></i> 
                         &nbsp;View Menu</Link>
                 </div>
             </div>

@@ -28,7 +28,7 @@ class Restaurant extends React.Component {
     
     }
     render(){
-        //console.log(this.state.restaurantDetail);
+        console.log(this.props.location.state);
         return (
             <div>
                 {this.state.restaurantDetail.dishItems && <div>

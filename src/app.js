@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 //importing redux store 
 import configureStore from './store/configurestore';
-import {calculateTotal} from './actions/cartitems'
-import getVisibleCartItems from './selector/selector';
+// import {calculateTotal} from './actions/cartitems'
+// import getVisibleCartItems from './selector/selector';
 //Importing components
 import AppRouter from './routers/AppRouter'
 
@@ -18,12 +18,12 @@ const store = configureStore();
 
 //console.log(store.getState());
 
-store.subscribe(()=>{
+// store.subscribe(()=>{
     //console.log(store.getState());
     //store.dispatch(calculateTotal());
     //console.log(getVisibleCartItems(store.getState().cartItems));
 
-})
+// })
 
 const jsx = (
     <Provider store ={store}>

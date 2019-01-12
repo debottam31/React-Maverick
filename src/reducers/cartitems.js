@@ -64,15 +64,15 @@ const cartItemsReducer = (state =cartItemDefaultState , action )=>{
                     return sum += (value.price * value.quantity)
                 }, state.deliveryCharge)
             }
-        case 'CALCULATE_TOTAL' : 
-            let totalAmount = state.deliveryChange;
-            state.cartItems.forEach((item)=>{
-                totalAmount = totalAmount+(item.price * item.quantity)
-            })
-            return {
-                ...state,
-                totalAmount
-            }
+        // case 'CALCULATE_TOTAL' : 
+        //     let totalAmount = state.deliveryChange;
+        //     state.cartItems.forEach((item)=>{
+        //         totalAmount = totalAmount+(item.price * item.quantity)
+        //     })
+        //     return {
+        //         ...state,
+        //         totalAmount
+        //     }
         default : 
             return state;
     }   
